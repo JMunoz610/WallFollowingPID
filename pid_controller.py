@@ -135,9 +135,6 @@ class PIDController(Node):
             # Find the minimum range value between min_scan_angle and max_scan_angle
             # If the minimum range value found is closer to min_threshold_distance, change the flag self._close_obstacle
             # Note: You have to find the min index and max index.
-            
-            # Please double check the LaserScan message https://docs.ros2.org/foxy/api/sensor_msgs/msg/LaserScan.html
-            ####### TODO: ANSWER CODE BEGIN #######
 
         min_index = int( (self.scan_angle[0] - msg.angle_min) / (msg.angle_increment) )
         max_index = int( (self.scan_angle[1] - msg.angle_min) / (msg.angle_increment) )
@@ -161,9 +158,6 @@ class PIDController(Node):
             print(self.angle * 180/math.pi)
         else:
             self.get_logger().warn("No valid obstacle detected in scan window")
-        
-
-            ####### ANSWER CODE END #######
 
     def spin(self):
         while rclpy.ok():
@@ -175,7 +169,6 @@ class PIDController(Node):
             # Use the function move to publish velocities already implemented,
             # passing the default velocities saved in the corresponding class members.
 
-            ####### TODO: ANSWER CODE BEGIN #######
             if self.closest_x is not None:
                 dx = (self.closest_x-self.xd)*math.cos(self.angle)
                 dy = (self.closest_x-self.xd)*math.sin(self.angle)
@@ -205,10 +198,6 @@ class PIDController(Node):
                 # print(f"D-term: {D_term}")
                 # print("DEBUGGING:END")
                 
-
-           
-
-            ####### ANSWER CODE END #######
 
             # operating at the set frequency
             # https://robotics.stackexchange.com/questions/96684/rate-and-sleep-function-in-rclpy-library-for-ros2
