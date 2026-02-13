@@ -3,6 +3,8 @@
 ## Overview
 This project implements a **PID controller for obstacle avoidance** in a robot simulated with **ROS2 and Stage**. The robot uses laser scan data to detect obstacles and applies a PID control loop to adjust its angular velocity, keeping a safe clearance while moving forward.
 
+See the [addon](https://github.com/JMunoz610/LidarBot) to this project using ROS2 and Gazebo instead of stage.
+
 ---
 
 ## Goal
